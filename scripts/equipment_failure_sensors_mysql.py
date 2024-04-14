@@ -14,16 +14,14 @@ from credentials.paths import PATH_JSON_EQUIPMENT_FAILURE
 
 load = Load(db_connection=f'mysql://{USER}:{PWD}@{HOST}/{DB}')
 
-for i in range(1, 11):
-    nome_json = f"equpment_failure_sensors.txt_part{i}.json"
-    json_file = os.path.join(PATH_JSON_EQUIPMENT_FAILURE, nome_json)
-    df = Extract(json_file).to_dataframe()
-    df['timestamp'] = df['item'].str.extract(r'\[(.*?)\]', expand=False)
-    df['log_level'] = df['item'].str.extract(r'\b(ERROR|WARNING)\b', expand=False)
-    df['sensor_id'] = df['item'].str.extract(r'sensor\[(\d+)\]', expand=False).astype(float)
-    df['temperature'] = df['item'].str.extract(r'temperature\s+([+-]?\d+\.\d+|\d+)', expand=False).astype(float)
-    df['vibration'] = df['item'].str.extract(r'vibration\s+(-?\d+\.\d+|-?\d+)').astype(float)
-    load.df_to_mysql(table_name=EQUIPMENT_FAILURE_SENSORS, df=df)
-    print(f'Parte {nome_json} incluida! Contendo {len(df)} registros.')
+df = Extract(PATH_JSON_EQUIPMENT_FAILURE).to_dataframe()
+df['timestamp'] = df['item'].str.extract(r'\[(.*?)\]', expand=False)
+df['log_level'] = df['item'].str.extract(r'\b(ERROR|WARNING)\b', expand=False)
+df['sensor_id'] = df['item'].str.extract(r'sensor\[(\d+)\]', expand=False).astype(float)
+df['temperature'] = df['item'].str.extract(r'temperature\s+([+-]?\d+\.\d+|\d+)', expand=False).astype(float)
+df['vibration'] = df['item'].str.extract(r'vibration\s+(-?\d+\.\d+|-?\d+)').astype(float)
+df_sem_duplicatas = df.drop_duplicates(subset=['timestamp', 'sensor_id', 'temperature', 'vibration'])
+load.df_to_mysql(table_name=EQUIPMENT_FAILURE_SENSORS, df=df_sem_duplicatas)
+print(f'Parte {PATH_JSON_EQUIPMENT_FAILURE} incluida! Contendo {len(df_sem_duplicatas)} registros.')
 
 

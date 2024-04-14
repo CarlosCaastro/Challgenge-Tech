@@ -1,5 +1,4 @@
 CREATE TABLE IF NOT EXISTS equipment_failure_sensors (
-    id SERIAL PRIMARY KEY,
     item TEXT,
     timestamp TEXT,
     log_level TEXT,
