@@ -25,3 +25,16 @@ class MySQL:
         cursor = self.connection.cursor()
         cursor.execute(f'CREATE SCHEMA IF NOT EXISTS {schema_name}')
         cursor.close()
+
+    def get_tables(self):
+        try:
+            query = "SHOW TABLES"
+            cursor = self.connection.cursor()
+            cursor.execute(query)
+            tables = cursor.fetchall()
+            cursor.close()
+            print("Tabelas:")
+            for table in tables:
+                print(table[0])
+        except Exception as e:
+            print(f'Erro ao recuperar as tabelas: {e}')
