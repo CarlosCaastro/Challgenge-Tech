@@ -1,0 +1,4 @@
+*.json
+*.ipynb
+*.txt
+.venv
