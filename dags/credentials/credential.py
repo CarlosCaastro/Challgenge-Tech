@@ -1,6 +1,6 @@
-HOST = 'localhost'
-USER = 'carlos'
-PWD = 'teste_2024'
-DB = 'challenge'
-CONTAINER = 'challgenge-tech-db-1'
-PORT = '3306'
+HOST = "localhost"
+USER = "carlos"
+PWD = "teste_2024"
+DB = "challenge"
+CONTAINER = "challgenge-tech-db-1"
+PORT = "3306"

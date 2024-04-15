@@ -1,0 +1,17 @@
+[2024-04-15T01:02:38.854+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-15T01:02:38.894+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_and_load_equipment_failure_sensors.extract_data scheduled__2022-03-07T00:00:00+00:00 [queued]>
+[2024-04-15T01:02:38.906+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_and_load_equipment_failure_sensors.extract_data scheduled__2022-03-07T00:00:00+00:00 [queued]>
+[2024-04-15T01:02:38.907+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-15T01:02:38.926+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): extract_data> on 2022-03-07 00:00:00+00:00
+[2024-04-15T01:02:38.941+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=736) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-15T01:02:38.944+0000] {standard_task_runner.py:63} INFO - Started process 746 to run task
+[2024-04-15T01:02:38.943+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'extract_and_load_equipment_failure_sensors', 'extract_data', 'scheduled__2022-03-07T00:00:00+00:00', '--job-id', '2416', '--raw', '--subdir', 'DAGS_FOLDER/dag_equipment_failure_sensors.py', '--cfg-path', '/tmp/tmp2rsw7a50']
+[2024-04-15T01:02:38.945+0000] {standard_task_runner.py:91} INFO - Job 2416: Subtask extract_data
+[2024-04-15T01:02:39.022+0000] {task_command.py:426} INFO - Running <TaskInstance: extract_and_load_equipment_failure_sensors.extract_data scheduled__2022-03-07T00:00:00+00:00 [running]> on host 5844c8608a80
+[2024-04-15T01:02:39.161+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='extract_and_load_equipment_failure_sensors' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2022-03-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-03-07T00:00:00+00:00'
+[2024-04-15T01:02:39.162+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-15T01:02:46.242+0000] {local_task_job_runner.py:240} INFO - Task exited with return code -9
+[2024-04-15T01:02:46.443+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-15T01:02:46.446+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

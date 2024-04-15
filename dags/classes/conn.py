@@ -1,5 +1,6 @@
 import mysql.connector
 
+
 class Conexao:
     def __init__(self, host, usuario, senha, banco):
         self.host = host
@@ -14,7 +15,7 @@ class Conexao:
                 host=self.host,
                 user=self.usuario,
                 password=self.senha,
-                database=self.banco
+                database=self.banco,
             )
             print("Conexão estabelecida.")
             return self.conexao
@@ -22,7 +23,7 @@ class Conexao:
         except mysql.connector.Error as erro:
             print(f"Erro ao conectar ao banco de dados: {erro}")
             return None
-    
+
     def executar_sql(self, sql):
         try:
             cursor = self.conexao.cursor()
@@ -37,5 +38,3 @@ class Conexao:
             print("Conexão fechada.")
         else:
             print("Não há nenhuma conexão para fechar.")
-
-
