@@ -2,3 +2,5 @@
 *.ipynb
 *.txt
 .venv
+.logs
+.log

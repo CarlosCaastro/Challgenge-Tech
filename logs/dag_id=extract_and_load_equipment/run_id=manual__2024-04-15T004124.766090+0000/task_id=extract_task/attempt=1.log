@@ -1,0 +1,35 @@
+[2024-04-15T00:41:26.480+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-15T00:41:26.498+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_and_load_equipment.extract_task manual__2024-04-15T00:41:24.766090+00:00 [queued]>
+[2024-04-15T00:41:26.505+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_and_load_equipment.extract_task manual__2024-04-15T00:41:24.766090+00:00 [queued]>
+[2024-04-15T00:41:26.506+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-15T00:41:26.518+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): extract_task> on 2024-04-15 00:41:24.766090+00:00
+[2024-04-15T00:41:26.526+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=296) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-15T00:41:26.527+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'extract_and_load_equipment', 'extract_task', 'manual__2024-04-15T00:41:24.766090+00:00', '--job-id', '2343', '--raw', '--subdir', 'DAGS_FOLDER/dag_equipment.py', '--cfg-path', '/tmp/tmpva9_msej']
+[2024-04-15T00:41:26.528+0000] {standard_task_runner.py:63} INFO - Started process 298 to run task
+[2024-04-15T00:41:26.528+0000] {standard_task_runner.py:91} INFO - Job 2343: Subtask extract_task
+[2024-04-15T00:41:26.564+0000] {task_command.py:426} INFO - Running <TaskInstance: extract_and_load_equipment.extract_task manual__2024-04-15T00:41:24.766090+00:00 [running]> on host 5844c8608a80
+[2024-04-15T00:41:26.641+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='extract_and_load_equipment' AIRFLOW_CTX_TASK_ID='extract_task' AIRFLOW_CTX_EXECUTION_DATE='2024-04-15T00:41:24.766090+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-15T00:41:24.766090+00:00'
+[2024-04-15T00:41:26.642+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-15T00:41:26.643+0000] {logging_mixin.py:188} INFO - /opt/***/dados/equipment.json
+[2024-04-15T00:41:26.646+0000] {python.py:237} INFO - Done. Returned value was:     equipment_id      name group_name
+0              1  5310B9D7   FGHQWR2Q
+1              2  43B81579   VAPQY59S
+2              3  E1AD07D4   FGHQWR2Q
+3              4  ADE40E7F   9N127Z5P
+4              5  78FFAD0C   9N127Z5P
+5              6  9AD15F7E   PA92NCXZ
+6              7  E54B5C3A   FGHQWR2Q
+7              8  86083278   NQWPA8D3
+8              9  3329175B   VAPQY59S
+9             10  98B84035   NQWPA8D3
+10            11  09C37FB8   PA92NCXZ
+11            12  CF304D24   FGHQWR2Q
+12            13  4E834E81   Z9K1SAP4
+13            14  2C195700   VAPQY59S
+[2024-04-15T00:41:26.655+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-15T00:41:26.684+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=extract_and_load_equipment, task_id=extract_task, execution_date=20240415T004124, start_date=20240415T004126, end_date=20240415T004126
+[2024-04-15T00:41:26.741+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-15T00:41:26.759+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-04-15T00:41:26.774+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
