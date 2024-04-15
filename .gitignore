@@ -4,4 +4,4 @@
 .venv
 .logs
 .log
-/logs/
+\logs
