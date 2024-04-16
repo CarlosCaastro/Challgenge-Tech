@@ -1,6 +1,7 @@
 # Sumário:
 
 - [Introdução](#introdução)
+- [Start](#inicialização)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Testes](#testes)
 - [Arquitetura da Solução](#arquitetura-da-solução)
@@ -15,6 +16,22 @@ Para facilitar a gestão e a escalabilidade, o ambiente de desenvolvimento utili
 O processo de automatização é conduzido por Directed Acyclic Graphs (DAGs) no Airflow. As DAGs são responsáveis por definir o fluxo de trabalho, desde a identificação das fontes de dados até a carga dos dados tratados no banco de dados MySQL. Uma parte que vale ressaltar+ deste processo é a integração com volumes Docker, onde os dados são armazenados como volumes nos containers do Airflow, permitindo uma interação fluida entre os dados e o pipeline de processamento.
 
 No âmbito técnico, o projeto engloba várias etapas, incluindo a extração de dados dos volumes Docker, o tratamento e limpeza dos dados, bem como a inserção eficiente no banco de dados MySQL. Cada DAG foi projetado para garantir a integridade e consistência dos dados.
+
+## Inicialização
+
+### MySQL
+
+```
+docker-compose -f docker-compose.MySQL.yml up -d --build
+```
+
+### Airflow
+
+```
+docker-compose -f docker-compose.Airflow.yml up -d airflow-init
+
+docker-compose -f docker-compose.Airflow.yml up -d
+```
 
 ## Estrutura do Projeto
 
