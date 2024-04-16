@@ -1,4 +1,4 @@
-*.json
+equpment_failure_sensors.json
 *.ipynb
 *.txt
 .venv
