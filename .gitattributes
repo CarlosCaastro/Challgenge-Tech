@@ -1,0 +1,1 @@
+equpment_failure_sensors.json filter=lfs diff=lfs merge=lfs -text
